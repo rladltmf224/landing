@@ -19,15 +19,9 @@
         <!-- 사진부분 -->
         <v-row class="d-flex justify-center  ">
             <v-col sm="4"  xs="4" lg="6" class=" d-flex  ">
-                 <v-carousel>
-    <v-carousel-item
-      v-for="(item,i) in items"
-      :key="i"
-      :src="item.src"
-      reverse-transition="fade-transition"
-      transition="fade-transition"
-    ></v-carousel-item>
-  </v-carousel>
+                <v-img class="mx-2 mid_img" src="../content/photo/vertical_farm_1.png"></v-img>
+                <v-img class="mx-2 mid_img" src="../content/photo/vertical_farm_2.jpg"></v-img>
+                <v-img class="mx-2 mid_img" src="../content/photo/vertical_farm_3.jpg"></v-img>
             </v-col>
         </v-row>
         <!-- 고객사부분 -->
@@ -80,9 +74,6 @@
                 </div>
             </v-col>
         </v-row>
-
-
-       
         <v-row class="d-flex justify-center">
             <v-col sm="10" xs="10" lg="6" class="px-6">
                 <div class="sub_CON_Tit_1 ">

@@ -5,12 +5,19 @@
 .banner_title_text {
   color: white;
   font-family: "Puradak_header" !important;
+  color: white !important;
+  z-index: 9999 !important;
 }
 
 .list_title_text {
   font-family: "Puradak_header" !important;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 5px;
 }
-
+.list_title_sm_text {
+  font-family: "Puradak_header" !important;
+}
 .list_title_text:before {
   content: "";
   display: block;
@@ -25,4 +32,15 @@
 .list_title_text_green {
   font-family: "Puradak_header" !important;
   color: green;
+}
+.mid_img {
+  width: 200px;
+  height: 200px;
+}
+
+@media (max-width: 600px) {
+  .mid_img {
+    width: 50px;
+    height: 50px;
+  }
 }

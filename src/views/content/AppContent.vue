@@ -29,16 +29,29 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col cols="12" sm="10" md="8" lg="6">
-        <v-carousel style="height: 250px">
+      <v-col cols="12" sm="10" md="8" lg="6" class="d-flex">
+        <!-- <v-carousel class="car">
           <v-carousel-item
+            class="carousel_img"
             v-for="(item, i) in items"
             :key="i"
             :src="item.src"
             reverse-transition="fade-transition"
             transition="fade-transition"
           ></v-carousel-item>
-        </v-carousel>
+        </v-carousel> -->
+        <v-img
+          class="mid_img"
+          src="../content/photo/vertical_farm_1.png"
+        ></v-img>
+        <v-img
+          class="mid_img"
+          src="../content/photo/vertical_farm_2.jpg"
+        ></v-img>
+        <v-img
+          class="mid_img"
+          src="../content/photo/vertical_farm_3.jpg"
+        ></v-img>
       </v-col>
     </v-row>
 
@@ -46,7 +59,9 @@
       <v-col cols="12" sm="10" md="8" lg="6">
         <v-row>
           <v-col>
-            <p class="pa-0 ma-0 list_title_text text-start text-h6">
+            <p
+              class="pa-0 ma-0 list_title_text text-start text-lg-h5 text-sm-h6"
+            >
               <span class="list_title_text_green">한국표준육묘</span>의 묘를
               믿고 써보신 농가
             </p>
@@ -56,15 +71,10 @@
     </v-row>
 
     <v-row justify="center">
-      <v-col cols="12" sm="10" md="8" lg="6" class="py-0">
-        <v-progress-linear value="100" color="green "></v-progress-linear>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
       <v-col cols="12" sm="6" xs="2" md="8" lg="6">
         <v-row>
           <v-col>
-            <p class="pa-0 ma-0 list_title_text text-start text-body-2">
+            <p class="pa-0 ma-0 list_title_sm_text text-start text-body-2">
               20만평에 해당하는 많은 농가에서
               <br />
               이미 저희 한국표준육묘를 이용하고 계십니다.
@@ -121,6 +131,40 @@
             </v-carousel-item>
           </template>
         </v-carousel>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col cols="12" sm="10" md="8" lg="6">
+        <v-row>
+          <v-col>
+            <p
+              class="pa-0 ma-0 list_title_text text-start text-lg-h5 text-sm-h6"
+            >
+              <span class="list_title_text_green">한국표준육묘</span>의 장점은
+              무엇인가요?
+            </p>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col lg="6" xs="12">
+        <v-card class="mx-auto" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="text-sm-h6 mb-1">
+                <p class="list_title_text">
+                  <v-icon color="#104b00"> mdi-bug-outline</v-icon> 병해충,
+                  바이러스에 강하다
+                </p>
+              </v-list-item-title>
+              <v-list-item-subtitle
+                >밀폐형 수직 육묘장은 엄격한 위생관리로 외부의 바이러스와 해충의
+                유입을 원천적으로 차단합니다.</v-list-item-subtitle
+              >
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
