@@ -6,7 +6,7 @@
             </v-btn>
             <div class="d-flex align-center">
                 한국표준육묘
-            </div>
+            </div> 
             <v-spacer></v-spacer>
             <v-btn text  @click="MoveToInfo()">
                 <span class="mr-2">소개</span>

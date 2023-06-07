@@ -57,26 +57,15 @@ export default {
 };
 </script>
 <style>
-@font-face {
+  @font-face {
   font-family: "Puradak_header";
   src: url("/src/assets/fonts/Puradak\ Gentle\ Gothic.ttf") format("woff");
   font-style: normal;
   font-weight: normal;
-}
+} 
 
 .header {
   font-family: "Puradak_header";
-}
+} 
 
-p,
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  transform: skew(-0.1deg);
-  color: #222;
-}
 </style>

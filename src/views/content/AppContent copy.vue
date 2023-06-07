@@ -19,9 +19,15 @@
         <!-- 사진부분 -->
         <v-row class="d-flex justify-center  ">
             <v-col sm="4"  xs="4" lg="6" class=" d-flex  ">
-                <v-img class="mx-2 mid_img" src="../content/photo/vertical_farm_1.png"></v-img>
-                <v-img class="mx-2 mid_img" src="../content/photo/vertical_farm_2.jpg"></v-img>
-                <v-img class="mx-2 mid_img" src="../content/photo/vertical_farm_3.jpg"></v-img>
+                 <v-carousel>
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+      reverse-transition="fade-transition"
+      transition="fade-transition"
+    ></v-carousel-item>
+  </v-carousel>
             </v-col>
         </v-row>
         <!-- 고객사부분 -->
