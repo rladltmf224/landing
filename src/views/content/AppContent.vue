@@ -2,54 +2,36 @@
   <v-container fluid>
     <v-row>
       <v-col class="px-0 my-0 py-0">
-        <v-img
-          class="banner_img d-flex align-center"
-          src="../content/photo/banner.png"
-          cover
-        >
-          <v-row>
-            <v-col>
-              <p
-                class="ma-0 banner_title_text text-center text-h6 text-md-h5 text-lg-h4 text-sm-h6 text-xs-h6"
-              >
-                한국표준육묘는 어떤곳인가요?
-              </p>
-            </v-col>
-          </v-row>
-          <v-row class="d-flex justify-center">
-            <v-col class="text-center" cols="10">
-              <p class="ma-0 banner_title_text text-center">
-                한국표준육묘는 국내 최초의 수직형 LED 육묘업체입니다.
-                지속가능하며 혁신적인 기술을 통해 최적의 육묘 솔루션을 제공하여
-                우수한 품질의 묘를 생산합니다.
-              </p>
-            </v-col>
-          </v-row>
-        </v-img>
+        <div class="img-wrap">
+          <div class="text">
+            <p
+              class="ma-0 banner_title_text text-center text-h6 text-md-h5 text-lg-h4 text-sm-h4 text-xs-h4"
+            >
+              한국표준육묘는 어떤곳인가요?
+            </p>
+            <br />
+            <p class="pa-0 ma-0 banner_content_text">
+              한국표준육묘는 국내 최초의 수직형 LED 육묘업체입니다. 지속가능하며
+              혁신적인 기술을 통해 최적의 육묘 솔루션을 제공하여 우수한 품질의
+              묘를 생산합니다.
+            </p>
+          </div>
+          <v-img class="blur" src="../content/photo/banner.png" />
+        </div>
       </v-col>
     </v-row>
     <v-row justify="center">
       <v-col cols="12" sm="10" md="8" lg="6" class="d-flex">
-        <!-- <v-carousel class="car">
-          <v-carousel-item
-            class="carousel_img"
-            v-for="(item, i) in items"
-            :key="i"
-            :src="item.src"
-            reverse-transition="fade-transition"
-            transition="fade-transition"
-          ></v-carousel-item>
-        </v-carousel> -->
         <v-img
-          class="mid_img"
+          class="mid_img mr-1"
           src="../content/photo/vertical_farm_1.png"
         ></v-img>
         <v-img
-          class="mid_img"
+          class="mid_img mr-1"
           src="../content/photo/vertical_farm_2.jpg"
         ></v-img>
         <v-img
-          class="mid_img"
+          class="mid_img mr-1"
           src="../content/photo/vertical_farm_3.jpg"
         ></v-img>
       </v-col>
@@ -152,8 +134,8 @@
         <v-card class="mx-auto" outlined>
           <v-list-item three-line>
             <v-list-item-content>
-              <v-list-item-title class="text-sm-h6 mb-1">
-                <p class="list_title_text">
+              <v-list-item-title class="card_titletext-sm-h6 mb-1">
+                <p class="card_title">
                   <v-icon color="#104b00"> mdi-bug-outline</v-icon> 병해충,
                   바이러스에 강하다
                 </p>
@@ -161,6 +143,71 @@
               <v-list-item-subtitle
                 >밀폐형 수직 육묘장은 엄격한 위생관리로 외부의 바이러스와 해충의
                 유입을 원천적으로 차단합니다.</v-list-item-subtitle
+              >
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col lg="6" xs="12">
+        <v-card class="mx-auto" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="card_titletext-sm-h6 mb-1">
+                <p class="card_title">
+                  <v-icon color="#104b00"> mdi-sprout</v-icon> 연중 내내 균일한
+                  품질 생산
+                </p>
+              </v-list-item-title>
+              <v-list-item-subtitle
+                >7-8월 고온기 육묘의 경우 고온 스트레스나 열해가 발생하기
+                쉽습니다. 하지만 한국표준육묘는 모종의 최적 생장 환경을 유지하여
+                이상 고온 등의 외부 요인들로부터
+                안전합니다.</v-list-item-subtitle
+              >
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col lg="6" xs="12">
+        <v-card class="mx-auto" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="card_titletext-sm-h6 mb-1">
+                <p class="card_title">
+                  <v-icon color="#104b00"> mdi-virus</v-icon> 성장억제제 처리를
+                  하지 않는다.
+                </p>
+              </v-list-item-title>
+              <v-list-item-subtitle
+                >한국표준육묘 시스템은 실시간으로 작물 특성에 맞는 환경( 광량 및
+                광질, 온도, 습도, 공기, 양분 등)을 최적으로 제어하여 육묘하기
+                때문에 성장억제제를 전혀 사용 할 필요가
+                없습니다.</v-list-item-subtitle
+              >
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col lg="6" xs="12">
+        <v-card class="mx-auto" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="card_titletext-sm-h6 mb-1">
+                <p class="card_title">
+                  <v-icon color="#104b00"> mdi-watering-can</v-icon> 국내 최단
+                  육묘기간
+                </p>
+              </v-list-item-title>
+              <v-list-item-subtitle
+                >생육에 최적의 환경을 제공하여 육묘기간이 2/3 정도로 짧습니다.
+                뿌리노화 걱정이 없어 정식 시 활착과 성장이
+                빠릅니다.</v-list-item-subtitle
               >
             </v-list-item-content>
           </v-list-item>
