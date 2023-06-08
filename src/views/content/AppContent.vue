@@ -214,6 +214,24 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col class="px-0 my-0 py-0">
+        <div class="img-wrap">
+          <div class="text">
+            <p
+              class="ma-0 banner_title_text text-center text-h6 text-md-h5 text-lg-h4 text-sm-h4 text-xs-h4"
+            >
+              수직농장에서 육묘한 묘를 무료로 나눠드립니다.
+            </p>
+            <br />
+            <p class="pa-0 ma-0 banner_content_text">
+              (1000평 이상 2판, 3000평 이상 5판)
+            </p>
+          </div>
+          <v-img class="blur" src="../content/photo/seedling_banner.png" />
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 <script lang="ts">
