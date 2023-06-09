@@ -74,7 +74,6 @@
               v-if="(index + 1) % columns === 1 || columns === 1"
               :key="index"
             >
-              <!-- Carousel  -->
               <v-row class="flex-nowrap" style="height: 100%">
                 <template v-for="(n, i) in columns">
                   <template v-if="+index + i < farmsInfo.length">
@@ -214,8 +213,8 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col class="px-0 my-0 py-0">
+    <v-row justify="center">
+      <v-col class="px-0 my-0">
         <div class="img-wrap">
           <div class="text">
             <p
@@ -232,13 +231,74 @@
         </div>
       </v-col>
     </v-row>
+    <v-row justify="center">
+      <v-col cols="12" sm="10" md="8" lg="6">
+        <v-row>
+          <v-col>
+            <p
+              class="pa-0 ma-0 list_title_text text-start text-lg-h5 text-sm-h6"
+            >
+              신청서
+            </p>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col lg="6" xs="12">
+        <div class="rq-form">
+          <div id="divId" class="box-input">
+            <div class="input-wrap">
+              <input
+                id="id"
+                type="text"
+                placeholder="이름"
+                class="my-1 input-default is-delete"
+                title="이름"
+                oninput="login.confirmKeyPress(this, $(this));$commUtil.inputOnlyEngNumber(this, 15);login.saveIdOnInput();"
+                onkeypress="login.enterKeyEvent(event,'id');"
+              />
+            </div>
+            <span class="txt-error" id="idError"></span>
+          </div>
+          <div id="divPw" class="box-input">
+            <div class="input-wrap">
+              <input
+                id="password"
+                type="password"
+                placeholder="재배면적(평)"
+                class="my-1 input-default is-delete"
+                title="이름"
+                oninput="login.confirmKeyPress(this, $(this));passValid.passInputCheck(this)"
+                onkeypress="login.enterKeyEvent(event,'pw')"
+              />
+            </div>
+          </div>
+          <div id="divPw" class="box-input">
+            <div class="input-wrap">
+              <input
+                id="password"
+                type="password"
+                placeholder="연락처"
+                class="my-1 input-default is-delete"
+                title="이름"
+                oninput="login.confirmKeyPress(this, $(this));passValid.passInputCheck(this)"
+                onkeypress="login.enterKeyEvent(event,'pw')"
+              />
+            </div>
+          </div>
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
 import * as api from "@/api/index.js";
 import cfg from "./farmsInfo.js";
-@Component
+@Component({
+  components: {},
+})
 export default class AppContent extends Vue {
   userInfo: any = {
     customerName: "",

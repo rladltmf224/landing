@@ -77,6 +77,149 @@
   font-family: "Puradak_header" !important;
 }
 
+// form
+.board_write_form {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0 !important;
+  display: flex;
+}
+.board_write_form {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0 !important;
+  display: flex;
+}
+.board_write_form tbody {
+  background: #fff;
+  position: relative;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+.board_write_form .form_field:nth-child(2) td.field {
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  border-right: 1px solid #bfbfbf;
+}
+.board_write_form input[type="text"],
+.board_write_form input[type="tel"],
+.board_write_form select {
+  height: 50px;
+}
+.w120 {
+  width: 110px;
+}
+.board_write_form select {
+  cursor: pointer;
+}
+.w500 {
+  width: 700px;
+  border: 1px solid #bbb;
+  font-family: "NotoSansKR-Medium";
+  font-size: 17px;
+  padding-left: 10px;
+  height: 50px;
+}
+.w500_number {
+  width: 200px;
+  border: 1px solid #bbb;
+  font-family: "NotoSansKR-Medium";
+  font-size: 17px;
+  padding-left: 10px;
+}
+.board_write_form input[type="text"],
+.board_write_form input[type="tel"],
+.board_write_form select {
+  border: 1px solid #bbb;
+  font-family: "NotoSansKR-Medium";
+  font-size: 17px;
+  padding-left: 10px;
+}
+.board_write_form input[type="text"],
+.board_write_form input[type="tel"],
+.board_write_form select {
+  height: 50px;
+}
+
+.board_write_form input[type="text"],
+.board_write_form input[type="tel"],
+.board_write_form select {
+  border: 1px solid #bbb;
+  font-family: "NotoSansKR-Medium";
+  font-size: 17px;
+  padding-left: 10px;
+}
+.board_write_form .form_field:nth-child(1) td.field {
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  border-right: 1px solid #bfbfbf;
+}
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+.board_write_form td.field {
+  font-size: 20px;
+  padding: 10px 10px;
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #bfbfbf;
+}
+.board_write_form .form_field th {
+  width: 200px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #4a465e;
+  padding: 20px 15px;
+  vertical-align: middle;
+  border: 1px solid #9e9ca9;
+  cursor: default;
+}
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+// new form
+.box-input .input-default,
+.box-select .select-default,
+.btn-select button {
+  width: 100%;
+  height: 50px;
+  padding: 16px 20px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  transition: border-color 0.3s ease;
+  color: #666;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.3px;
+}
+.util .login .rq-form {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.box-input .input-wrap {
+  position: relative;
+}
+.box-input .input-default.is-delete {
+  padding-right: 50px;
+}
+.rq-form .main-txt-group {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+}
 @media (max-width: 600px) {
   .mid_img {
     width: 50px;

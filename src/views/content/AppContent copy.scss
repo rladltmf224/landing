@@ -169,11 +169,6 @@ tbody {
   border: 1px solid #bfbfbf;
 }
 
-td {
-  display: table-cell;
-  vertical-align: inherit;
-}
-
 .board_write_form input[type="text"],
 .board_write_form input[type="tel"],
 .board_write_form select {
@@ -223,7 +218,7 @@ select:not(:-internal-list-box) {
 }
 
 .w500 {
-  width: 700px;
+  width: 100px !important;
   border: 1px solid #bbb;
   font-family: "NotoSansKR-Medium";
   font-size: 17px;
