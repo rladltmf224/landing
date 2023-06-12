@@ -20,7 +20,7 @@
         </div>
       </v-col>
     </v-row>
-    <v-row justify="center">
+    <v-row justify="center ">
       <v-col cols="12" sm="10" md="8" lg="6" class="d-flex">
         <v-img
           class="mid_img mr-1"
@@ -66,7 +66,7 @@
       </v-col>
     </v-row>
     <!-- pc버젼 -->
-    <!--     <v-row justify="center">
+    <v-row justify="center " v-if="isShowValue">
       <v-col xl="6" lg="6" md="6" sm="6" xs="5">
         <v-carousel
           style="height: 210px"
@@ -118,11 +118,17 @@
           </template>
         </v-carousel>
       </v-col>
-    </v-row> -->
+    </v-row>
     <!-- 모바일버젼 -->
-    <v-row justify="center">
+    <v-row justify="center" v-else>
       <v-col xl="6" lg="6" md="6" sm="6" xs="5">
-        <v-carousel height="100" hide-delimiters class="custom">
+        <v-carousel
+          height="100"
+          hide-delimiters
+          :interval="2000"
+          cycle
+          class="custom"
+        >
           <v-carousel-item v-for="(slide, i) in farmsInfo" :key="i">
             <v-row class="fill-height" align="center" justify="center">
               <v-col cols="12">
@@ -165,7 +171,7 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col lg="6" xs="12">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5">
         <v-card class="mx-auto" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -175,10 +181,11 @@
                   바이러스에 강하다
                 </p>
               </v-list-item-title>
-              <v-list-item-subtitle
-                >밀폐형 수직 육묘장은 엄격한 위생관리로 외부의 바이러스와 해충의
-                유입을 원천적으로 차단합니다.</v-list-item-subtitle
-              >
+
+              <v-card-text class="pa-0">
+                밀폐형 수직 육묘장은 엄격한 위생관리로 외부의 바이러스와 해충의
+                유입을 원천적으로 차단합니다.
+              </v-card-text>
             </v-list-item-content>
           </v-list-item>
         </v-card>
@@ -195,12 +202,11 @@
                   품질 생산
                 </p>
               </v-list-item-title>
-              <v-list-item-subtitle
-                >7-8월 고온기 육묘의 경우 고온 스트레스나 열해가 발생하기
+              <v-card-text class="pa-0">
+                7-8월 고온기 육묘의 경우 고온 스트레스나 열해가 발생하기
                 쉽습니다. 하지만 한국표준육묘는 모종의 최적 생장 환경을 유지하여
-                이상 고온 등의 외부 요인들로부터
-                안전합니다.</v-list-item-subtitle
-              >
+                이상 고온 등의 외부 요인들로부터 안전합니다.
+              </v-card-text>
             </v-list-item-content>
           </v-list-item>
         </v-card>
@@ -217,12 +223,11 @@
                   하지 않는다.
                 </p>
               </v-list-item-title>
-              <v-list-item-subtitle
-                >한국표준육묘 시스템은 실시간으로 작물 특성에 맞는 환경( 광량 및
+              <v-card-text class="pa-0">
+                한국표준육묘 시스템은 실시간으로 작물 특성에 맞는 환경( 광량 및
                 광질, 온도, 습도, 공기, 양분 등)을 최적으로 제어하여 육묘하기
-                때문에 성장억제제를 전혀 사용 할 필요가
-                없습니다.</v-list-item-subtitle
-              >
+                때문에 성장억제제를 전혀 사용 할 필요가 없습니다.
+              </v-card-text>
             </v-list-item-content>
           </v-list-item>
         </v-card>
@@ -239,11 +244,10 @@
                   육묘기간
                 </p>
               </v-list-item-title>
-              <v-list-item-subtitle
-                >생육에 최적의 환경을 제공하여 육묘기간이 2/3 정도로 짧습니다.
-                뿌리노화 걱정이 없어 정식 시 활착과 성장이
-                빠릅니다.</v-list-item-subtitle
-              >
+              <v-card-text class="pa-0">
+                생육에 최적의 환경을 제공하여 육묘기간이 2/3 정도로 짧습니다.
+                뿌리노화 걱정이 없어 정식 시 활착과 성장이 빠릅니다.
+              </v-card-text>
             </v-list-item-content>
           </v-list-item>
         </v-card>
@@ -383,9 +387,30 @@ export default class AppContent extends Vue {
       src: require("./photo/vertical_farm_3.jpg"),
     },
   ];
+  width: number = 0;
+  isShowValue: boolean = false;
+
   get farmsInfo() {
     return cfg.farmsInfo;
   }
+  mounted() {
+    window.addEventListener("resize", this.handleResize);
+  }
+  beforeDestroy() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  handleResize(event: any) {
+    //모바일화면일때만 v-if해주기
+    this.width = window.innerWidth;
+
+    if (this.width > 600) {
+      this.isShowValue = true;
+    } else {
+      this.isShowValue = false;
+    }
+  }
+
   @Prop() private msg!: string;
   MoveToSample() {
     var element = document.querySelector("#sample");
