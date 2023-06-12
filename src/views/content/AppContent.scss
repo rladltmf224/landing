@@ -220,6 +220,65 @@ table {
   padding-bottom: 30px;
   border-bottom: 1px solid #ddd;
 }
+
+//플로팅 부분
+// 플로팅부분
+
+.floating {
+  display: inline-block;
+}
+.floating {
+  position: fixed;
+  z-index: 99997 !important;
+  right: 25%;
+  top: 325px;
+  left: 1739px;
+}
+#go_event01_pc,
+#go_event02_pc {
+  cursor: pointer;
+}
+#go_event01_pc {
+  animation: ease-in-out 2s infinite;
+  position: relative;
+  animation: loop 1.1s infinite;
+  top: 120px;
+}
+img {
+  display: block;
+}
+
+#go_event01_pc,
+#go_event02_pc {
+  cursor: pointer;
+}
+#go_event02_pc {
+  /* position: absolute;
+    top: 120px;
+    animation: go_event02_pc ease-in-out 1.95s .4s infinite; */
+  position: relative;
+  animation: loop 1.1s infinite;
+  top: 120px;
+}
+.img__sub_text {
+  color: white;
+}
+
+@keyframes loop {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  50% {
+    top: 6px;
+    left: 0px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+}
+
 @media (max-width: 600px) {
   .mid_img {
     width: 50px;
@@ -243,5 +302,9 @@ table {
     justify-content: center;
     z-index: 2;
     padding: 18px;
+  }
+  #go_event01_pc,
+  #go_event02_pc {
+    display: none;
   }
 }

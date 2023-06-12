@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-row>
+    <v-row id="info">
       <v-col class="px-0 my-0 py-0">
         <div class="img-wrap">
           <div class="text">
@@ -65,19 +65,24 @@
         </v-row>
       </v-col>
     </v-row>
-
-    <v-row justify="center">
+    <!-- pc버젼 -->
+    <!--     <v-row justify="center">
       <v-col xl="6" lg="6" md="6" sm="6" xs="5">
-        <v-carousel style="height: 200px" :interval="3000" cycle>
+        <v-carousel
+          style="height: 210px"
+          :interval="3000"
+          cycle
+          hide-delimiter-background
+        >
           <template v-for="(item, index) in farmsInfo">
             <v-carousel-item
               v-if="(index + 1) % columns === 1 || columns === 1"
               :key="index"
             >
-              <v-row class="flex-nowrap" style="height: 100%">
+              <v-row class="flex-nowrap">
                 <template v-for="(n, i) in columns">
                   <template v-if="+index + i < farmsInfo.length">
-                    <v-col :key="i">
+                    <v-col :key="i" class="">
                       <v-card class="mx-0" outlined height="100%">
                         <v-list-item three-line>
                           <v-list-item-content>
@@ -113,7 +118,38 @@
           </template>
         </v-carousel>
       </v-col>
+    </v-row> -->
+    <!-- 모바일버젼 -->
+    <v-row justify="center">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5">
+        <v-carousel height="100" hide-delimiters class="custom">
+          <v-carousel-item v-for="(slide, i) in farmsInfo" :key="i">
+            <v-row class="fill-height" align="center" justify="center">
+              <v-col cols="12">
+                <v-card class="mx-0" outlined height="100px">
+                  <v-list-item three-line>
+                    <v-list-item-content>
+                      <div class="text-overline mb-4">
+                        {{ slide.locate }}
+                      </div>
+                      <v-list-item-title class="text-h6 mb-1">
+                        <p class="mid_text">
+                          {{ slide.name }}
+                        </p>
+                      </v-list-item-title>
+                    </v-list-item-content>
+                    <v-list-item-avatar size="50" class="mt-6">
+                      <img src="../content/photo/자산 9.png" />
+                    </v-list-item-avatar>
+                  </v-list-item>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-carousel-item>
+        </v-carousel>
+      </v-col>
     </v-row>
+
     <v-row justify="center">
       <v-col cols="12" sm="10" md="8" lg="6">
         <v-row>
@@ -213,7 +249,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row justify="center">
+    <v-row justify="center" id="sample">
       <v-col class="px-0 my-0">
         <div class="img-wrap">
           <div class="text">
@@ -290,6 +326,26 @@
         </div>
       </v-col>
     </v-row>
+
+    <!-- float -->
+    <a
+      class="uk-position-bottom-right uk-text-center"
+      style="
+        z-index: 20000;
+        position: fixed !important;
+        bottom: 40px;
+        right: 40px;
+      "
+      uk-toggle=""
+      aria-expanded="false"
+    >
+      <a id="go_event01_pc" @click="MoveToSample()"
+        ><img src="../content/photo/자산 3.png" width="80"
+      /></a>
+      <a id="go_event02_pc" @click="MoveToInfo()"
+        ><img src="../content/photo/자산 4.png" width="80"
+      /></a>
+    </a>
   </v-container>
 </template>
 <script lang="ts">
