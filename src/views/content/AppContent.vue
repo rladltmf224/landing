@@ -192,7 +192,7 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col lg="6" xs="12">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5">
         <v-card class="mx-auto" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -213,7 +213,7 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col lg="6" xs="12">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5">
         <v-card class="mx-auto" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -234,7 +234,7 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col lg="6" xs="12">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5">
         <v-card class="mx-auto" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -272,7 +272,7 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col cols="12" sm="10" md="8" lg="6">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5">
         <v-row>
           <v-col>
             <p
@@ -284,53 +284,138 @@
         </v-row>
       </v-col>
     </v-row>
+
     <v-row justify="center">
-      <v-col lg="6" xs="12">
-        <div class="rq-form">
-          <div id="divId" class="box-input">
-            <div class="input-wrap">
-              <input
-                id="id"
-                type="text"
-                placeholder="이름"
-                class="my-1 input-default is-delete"
-                title="이름"
-                oninput="login.confirmKeyPress(this, $(this));$commUtil.inputOnlyEngNumber(this, 15);login.saveIdOnInput();"
-                onkeypress="login.enterKeyEvent(event,'id');"
-              />
-            </div>
-            <span class="txt-error" id="idError"></span>
-          </div>
-          <div id="divPw" class="box-input">
-            <div class="input-wrap">
-              <input
-                id="password"
-                type="password"
-                placeholder="재배면적(평)"
-                class="my-1 input-default is-delete"
-                title="이름"
-                oninput="login.confirmKeyPress(this, $(this));passValid.passInputCheck(this)"
-                onkeypress="login.enterKeyEvent(event,'pw')"
-              />
-            </div>
-          </div>
-          <div id="divPw" class="box-input">
-            <div class="input-wrap">
-              <input
-                id="password"
-                type="password"
-                placeholder="연락처"
-                class="my-1 input-default is-delete"
-                title="이름"
-                oninput="login.confirmKeyPress(this, $(this));passValid.passInputCheck(this)"
-                onkeypress="login.enterKeyEvent(event,'pw')"
-              />
-            </div>
-          </div>
-        </div>
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5" class="d-flex box-input pb-0">
+        <input
+          id="id"
+          type="text"
+          placeholder="이름"
+          class="my-1 input-default is-delete"
+          title="이름"
+        />
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5" class="box-input py-0">
+        <input
+          oninput="this.value = this.value.slice(0, 4).replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          type="number"
+          placeholder="재배면적 (평) ex) 3000"
+          v-model="userInfo.area"
+          name="c_name"
+          id="c_name"
+          class="my-1 input-default is-delete"
+        />
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5" class="box-input py-0">
+        <input
+          oninput="this.value = this.value.slice(0, 11).replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          type="number"
+          placeholder="전화번호 ex) 01012341234"
+          v-model="userInfo.phoneNumber_1"
+          name="c_name"
+          id="c_name"
+          class="my-1 input-default is-delete"
+        />
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5" class="box-input py-0">
+        <input
+          type="text"
+          placeholder="요청사항 ex) 토마토 2판 부탁드립니다."
+          v-model="userInfo.item"
+          name="c_name"
+          id="c_name"
+          maxlength="200"
+          class="my-1 input-default is-delete"
+        />
       </v-col>
     </v-row>
 
+    <!-- 개인정보수집동의 -->
+    <v-row justify="center">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5">
+        <v-card class="mx-auto" outlined height="100px" style="overflow: auto">
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="card_titletext-sm-h6 mb-1">
+                <strong class=""
+                  >개인정보 수집,이용,위탁,양도에 대한 동의</strong
+                >
+              </v-list-item-title>
+
+              <v-card-text class="pa-0">
+                <br />
+                한국표준육묘는 이벤트 참여자분들께 정보제공에 필요한 최소한의
+                개인정보를 수집하고 있습니다.
+                <br />이에 개인정보의 수집 및 이용에 관하여 아래와 같이 안내
+                하오니 충분히 읽어 보신 후 동의하여 주시기 바랍니다.<br />
+                <br />
+                <strong class="h6"
+                  >1. 개인정보 취급방침에 대한 동의 (필수) </strong
+                ><br />
+                개인정보 수집 주체 : 한국표준육묘<br />
+                개인정보 수집/이용 항목 : 이름, 연락처<br />
+                개인정보 수집/이용 목적 : 이벤트 응모<br />
+                개인정보 동의를 거부할 권리 : 귀하께서는 개인정보 수집/이용을
+                거절할 수 있으며, <br />거절하실 경우 서비스를 제공해 드릴 수
+                없습니다.<br />
+                <br />
+                <strong class="h6">2. 개인정보 수집 및 이용 기간</strong><br />
+                한국표준육묘는 개인정보수집 및 이용목적이 달성된 후에는 예외
+                없이 해당정보를 지체없이 파기합니다.<br />
+              </v-card-text>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5" class="d-flex justify-center">
+        <strong> ※ (필수) 개인정보취급방침에 </strong>
+        <span class="agree_radio_01"
+          ><label for="e01_agree_y" class="strong">
+            <input
+              class="ml-2"
+              type="radio"
+              @click="getBtnValue()"
+              v-model="radioValues"
+              value="Y"
+            />
+            동의합니다.</label
+          ></span
+        >
+        <span class="agree_radio_02"
+          ><label for="agree02" class="strong">
+            <input
+              class="ml-2"
+              type="radio"
+              @click="getBtnValue()"
+              v-model="radioValues"
+              value="N"
+            />
+            동의하지 않습니다.</label
+          ></span
+        >
+      </v-col>
+    </v-row>
+    <!-- 참여하기 -->
+    <v-row class="d-flex justify-center pb-12">
+      <v-col xl="6" lg="6" md="6" sm="6" xs="5">
+        <v-btn
+          block
+          @click="radioValues === 'Y' ? preSubmit() : null"
+          :color="radioValues === 'Y' ? 'primary' : 'grey'"
+          :disabled="radioValues === 'N'"
+          large
+          >참여하기</v-btn
+        >
+      </v-col>
+    </v-row>
     <!-- float -->
     <a
       class="uk-position-bottom-right uk-text-center"
@@ -388,7 +473,7 @@ export default class AppContent extends Vue {
     },
   ];
   width: number = 0;
-  isShowValue: boolean = false;
+  isShowValue: boolean = true;
 
   get farmsInfo() {
     return cfg.farmsInfo;
@@ -411,7 +496,6 @@ export default class AppContent extends Vue {
     }
   }
 
-  @Prop() private msg!: string;
   MoveToSample() {
     var element = document.querySelector("#sample");
     if (element !== null) {

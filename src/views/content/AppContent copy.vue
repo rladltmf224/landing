@@ -345,9 +345,7 @@ export default class AppContent extends Vue {
         let body = {
             area: this.userInfo.area,
             customerName: this.userInfo.customerName,
-            phoneNumber: this.userInfo.phoneNumber_1 +
-                this.userInfo.phoneNumber_2 +
-                this.userInfo.phoneNumber_3,
+            phoneNumber: this.userInfo.phoneNumber_1,
             request: this.userInfo.item
         }
         if (body.customerName == '') {
