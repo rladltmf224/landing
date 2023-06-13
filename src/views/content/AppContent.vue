@@ -291,6 +291,7 @@
           id="id"
           type="text"
           placeholder="이름"
+          v-model="userInfo.customerName"
           class="my-1 input-default is-delete"
           title="이름"
         />
@@ -299,7 +300,7 @@
     <v-row justify="center">
       <v-col xl="6" lg="6" md="6" sm="6" xs="5" class="box-input py-0">
         <input
-          oninput="this.value = this.value.slice(0, 4).replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          oninput="this.value = this.value.slice(0, 10).replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
           type="number"
           placeholder="재배면적 (평) ex) 3000"
           v-model="userInfo.area"
@@ -375,9 +376,19 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col xl="6" lg="6" md="6" sm="6" xs="5" class="d-flex justify-center">
-        <strong> ※ (필수) 개인정보취급방침에 </strong>
-        <span class="agree_radio_01"
+      <v-col
+        xl="6"
+        lg="6"
+        md="6"
+        sm="6"
+        xs="5"
+        class="d-flex justify-center py-0"
+      >
+        <!-- <strong> ※ (필수) 개인정보취급방침에 </strong> -->
+        <p class="text-subtitle-2 text-lg-subtitle-1">
+          ※ (필수) 개인정보취급방침에
+        </p>
+        <span class="agree_radio_01 text-subtitle-2 text-lg-subtitle-1"
           ><label for="e01_agree_y" class="strong">
             <input
               class="ml-2"
@@ -389,7 +400,7 @@
             동의합니다.</label
           ></span
         >
-        <span class="agree_radio_02"
+        <span class="agree_radio_02 text-subtitle-2 text-lg-subtitle-1"
           ><label for="agree02" class="strong">
             <input
               class="ml-2"
@@ -403,17 +414,24 @@
         >
       </v-col>
     </v-row>
+
     <!-- 참여하기 -->
-    <v-row class="d-flex justify-center pb-12">
+    <v-row class="pb-12 mt-0" justify="center">
       <v-col xl="6" lg="6" md="6" sm="6" xs="5">
         <v-btn
+          :style="
+            radioValues === 'Y'
+              ? 'background: linear-gradient(to right, #a6d254, #8cb83a)'
+              : 'background: linear-gradient(to right, #bebebe, rgb(155, 155, 155));'
+          "
           block
           @click="radioValues === 'Y' ? preSubmit() : null"
-          :color="radioValues === 'Y' ? 'primary' : 'grey'"
           :disabled="radioValues === 'N'"
           large
-          >참여하기</v-btn
+          elevation="0"
         >
+          <span style="color: white">참여하기</span>
+        </v-btn>
       </v-col>
     </v-row>
     <!-- float -->
