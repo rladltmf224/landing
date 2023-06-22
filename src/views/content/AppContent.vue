@@ -316,7 +316,7 @@
           oninput="this.value = this.value.slice(0, 11).replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
           type="number"
           placeholder="전화번호 ex) 01012341234"
-          v-model="userInfo.phoneNumber_1"
+          v-model="userInfo.phoneNumber"
           name="c_name"
           id="c_name"
           class="my-1 input-default is-delete"
@@ -468,14 +468,6 @@ export default class AppContent extends Vue {
     item: "",
     area: "",
     phoneNumber: "",
-    phoneNumber_1: "",
-    phoneNumber_2: "",
-    phoneNumber_3: "",
-  };
-  userPhoneNumberEl: any = {
-    phoneNumber_1: "",
-    phoneNumber_2: "",
-    phoneNumber_3: "",
   };
   radioValues: string = "Y";
   columns: number = 3;
@@ -492,7 +484,6 @@ export default class AppContent extends Vue {
   ];
   width: number = 0;
   isShowValue: boolean = true;
-
   get farmsInfo() {
     return cfg.farmsInfo;
   }
@@ -544,10 +535,7 @@ export default class AppContent extends Vue {
     let body = {
       area: this.userInfo.area,
       customerName: this.userInfo.customerName,
-      phoneNumber:
-        this.userInfo.phoneNumber_1 +
-        this.userInfo.phoneNumber_2 +
-        this.userInfo.phoneNumber_3,
+      phoneNumber: this.userInfo.phoneNumber,
       request: this.userInfo.item,
     };
     if (body.customerName == "") {
